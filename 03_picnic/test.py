@@ -62,7 +62,6 @@ def test_two_sorted():
 def test_more_than_two_sorted():
     """more than two items sorted output"""
 
-    arg = 'bananas apples dates cherries'
-    out = getoutput(f'{prg} {arg} --sorted')
+    out = getoutput(f'{prg} bananas apples dates cherries --sorted')
     expected = ('You are bringing apples, bananas, cherries, and dates.')
     assert out.strip() == expected

@@ -52,13 +52,12 @@ def stemmer(word):
     pattern = f'([{consonants}]+)?([{vowels}])(.*)'
 
     match = re.match(pattern, word)
-    if match:
-        p1 = match.group(1) or ''
-        p2 = match.group(2) or ''
-        p3 = match.group(3) or ''
-        return (p1, p2 + p3)
-    else:
+    if not match:
         return (word, '')
+    p1 = match.group(1) or ''
+    p2 = match.group(2) or ''
+    p3 = match.group(3) or ''
+    return (p1, p2 + p3)
 
 
 # --------------------------------------------------
